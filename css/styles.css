@@ -1,0 +1,130 @@
+:root {
+  --background-color: #f5f7fa;
+  --primary-color: #1e90ff;
+  --secondary-color: #ff6347;
+  --accent-color: #20b2aa;
+  --light-text: #f0f8ff;
+  --dark-text: #333333;
+  --light-background: #ffffff;
+  --dark-background: #2f4f4f;
+}
+
+.divider {
+  padding: 15px 0;
+}
+
+body {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  background-color: var(--background-color);
+  color: var(--dark-text);
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.container {
+  width: 90%;
+  max-width: 680px;
+  background-color: var(--light-background);
+  padding: 35px;
+  border-radius: 5px;
+}
+
+h1,
+.container,
+.output {
+  margin: 20px auto;
+}
+
+label,
+legend {
+  font-weight: bold;
+  color: var(--primary-color);
+  padding: 10px 15px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+  text-decoration: none;
+  background-color: var(--secondary-color);
+  border-radius: 4px;
+  color: var(--light-text);
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+  margin-left: 25px;
+}
+
+button:hover {
+  background-color: var(--accent-color);
+}
+
+.last-btn {
+  display: flex;
+  flex-direction: column;
+}
+
+.last-btn button {
+  margin-left: 0;
+}
+
+.last-btn button:last-child {
+  background-color: transparent;
+  border: none;
+  color: var(--secondary-color);
+  text-underline-offset: 0;
+  transition: 0.3s;
+}
+
+.last-btn button:last-child:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+button,
+input,
+select {
+  min-height: 24px;
+  color: var(--dark-text);
+  font-size: 15px;
+}
+
+fieldset,
+label,
+button,
+input,
+select {
+  margin-bottom: 10px;
+  padding: 10px 15px;
+}
+
+.output {
+  border: 2px solid var(--primary-color);
+  padding: 10px;
+  text-align: center;
+  background-color: var(--light-background);
+}
+
+.hide {
+  display: none;
+}
+
+.output span {
+  font-weight: bold;
+  font-size: 1.7em;
+}
+
+.surplus {
+  color: var(--secondary-color);
+}
+
+.deficit {
+  color: var(--accent-color);
+}

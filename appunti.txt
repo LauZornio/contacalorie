@@ -1,0 +1,116 @@
+let isRunning = true;
+let hasCompleted = false;
+
+is o has davanti alla variabile aiuta a capire che si tratta di un  valore booleano. E' una convenzione
+
+---------------------------
+
+const regex = /hello/;
+Le espressioni regolari (regex) in JavaScript sono strumenti potenti per la ricerca e la manipolazione di stringhe.
+
+/hello/: Un'espressione regolare (regular expression) racchiusa tra due slash /.
+Questa espressione regolare cerca il pattern (schema) esatto "hello" all'interno di una stringa. Quindi, se si utilizza questo regex in un metodo come test o match, esso cercherà la sequenza di caratteri "hello" nella stringa fornita.
+
+const regex = /hello/;
+console.log(regex.test("hello world")); // true
+console.log(regex.test("hi there"));    // false
+
+In questo esempio, regex.test("hello world") ritornerà true perché la stringa "hello world" contiene "hello". regex.test("hi there") ritornerà false perché la stringa "hi there" non contiene "hello".
+
+
+
+
+Metacaratteri e Caratteri Speciali
+I metacaratteri sono simboli speciali che hanno significati specifici nelle regex:
+
+. (punto): Rappresenta qualsiasi singolo carattere, tranne il terminatore di riga.
+
+Esempio: /h.llo/ corrisponde a "hello", "hallo", "hxllo", ecc.
+^: Indica l'inizio della stringa.
+
+Esempio: /^hello/ corrisponde a "hello" solo se è all'inizio della stringa.
+$: Indica la fine della stringa.
+
+Esempio: /hello$/ corrisponde a "hello" solo se è alla fine della stringa.
+*: Corrisponde a zero o più occorrenze del carattere precedente.
+
+Esempio: /hel*o/ corrisponde a "heo", "helo", "helllo", ecc.
++: Corrisponde a una o più occorrenze del carattere precedente.
+
+Esempio: /hel+o/ corrisponde a "helo", "helllo", ecc., ma non "heo".
+?: Corrisponde a zero o una occorrenza del carattere precedente.
+
+Esempio: /hel?o/ corrisponde a "heo" o "helo".
+[]: Definisce una classe di caratteri.
+
+Esempio: /h[aeiou]llo/ corrisponde a "hallo", "hello", "hillo", ecc.
+{}: Specifica un numero esatto di occorrenze del carattere precedente. trasforma in un array  i caratteri dentro la [], quindi non serve l'escape
+
+Esempio: /hel{2}o/ corrisponde a "hello".
+|: Operatore OR.
+
+Esempio: /hello|world/ corrisponde a "hello" o "world".
+Flags
+I flag modificano il comportamento delle espressioni regolari:
+
+i: Case-insensitive.
+
+Esempio: /hello/i corrisponde a "hello", "Hello", "HELLO", ecc.
+g: Global search, cerca tutte le occorrenze.
+
+Esempio: /hello/g trova tutte le occorrenze di "hello" in una stringa.
+m: Multiline, permette a ^ e $ di corrispondere all'inizio e alla fine delle linee.
+
+Esempio: /^hello/m corrisponde a "hello" all'inizio di ogni linea.
+
+const regex = /\+-\s/;
+\s è per lo spazio bianco
+\+ è per identificare il + come carattere e non come funzione
+
+
+\d all'interno del regex, significa [0-9], ovvero un numero da 0 a 9
+
+Sì, il metodo .match() in JavaScript è progettato per essere utilizzato specificamente con espressioni regolari (RegExp). La sua principale funzione è quella di cercare una stringa in base a un pattern definito da un'espressione regolare e restituire le corrispondenze trovate.
+
+
+-----------------------------------
+const targetInputContainer = document.querySelector(`${targetId} .input-container`);
+
+usa una tecnica nota come template literals (letterali template) per costruire una stringa dinamica in JavaScript.I template literals sono stringhe delimitate da backticks (`) anziché da virgolette singole (') o doppie ("). Offrono diversi vantaggi rispetto alle stringhe tradizionali, tra cui l'interpolazione delle espressioni e il supporto multi-linea.
+L'interpolazione delle espressioni consente di incorporare variabili ed espressioni all'interno di una stringa. Le espressioni da interpolare sono racchiuse tra ${}.
+
+document.querySelector:
+document.querySelector è un metodo che restituisce il primo elemento del documento che corrisponde al selettore CSS specificato.
+In questo caso, cerca un elemento con la classe input-container che è un discendente dell'elemento identificato da targetId.
+
+dichiarazione di una literal string: let HTMLString = ``;
+
+----------------------------------
+
+Il metodo querySelectorAll() restituisce tutti gli elementi del documento che corrispondono a un selettore CSS specificato. A differenza di querySelector() che restituisce solo il primo elemento che corrisponde al selettore, querySelectorAll() restituisce una NodeList di tutti gli elementi corrispondenti.
+
+
+---------------------
+element.insertAdjacentHTML(position, text);
+Il metodo insertAdjacentHTML() è un metodo molto utile del DOM che permette di inserire markup HTML nel documento in una posizione specificata rispetto a un elemento di riferimento.
+
+element: L'elemento di riferimento in cui verrà inserito il nuovo contenuto HTML.
+
+position: Una stringa che specifica la posizione relativa a element dove il text verrà inserito. Può essere uno dei seguenti valori:
+
+'beforebegin': Prima di element stesso.
+'afterbegin': All'inizio di element (prima del primo figlio).
+'beforeend': Alla fine di element (dopo l'ultimo figlio).
+'afterend': Dopo element stesso.
+text: Una stringa di markup HTML da inserire nel documento.
+
+
+-----------------------------------------
+NodeList
+Un NodeList è una collezione di nodi (elementi) che vengono ritornati come risultato di metodi DOM come document.querySelectorAll() o Node.childNodes. Non è un array, anche se sembra simile, ed è un tipo di oggetto fornito dal DOM per contenere e operare su un gruppo di nodi.
+
+Caratteristiche principali di NodeList:
+Somiglianza con gli array:
+
+Un NodeList assomiglia a un array in quanto è indicizzabile e ha una proprietà .length che restituisce il numero di nodi nella lista.
+Puoi accedere ai singoli elementi di un NodeList utilizzando la notazione dell'indice, ad esempio nodeList[0].
